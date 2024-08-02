@@ -8,7 +8,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
   -- with the ones you want to install
-  ensure_installed = {"clangd"},
+  ensure_installed = {"clangd", "pylsp", "rust_analyzer"},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -16,6 +16,16 @@ require('mason-lspconfig').setup({
 	    require('lspconfig').lua_ls.setup(lua_opts)
     end,
   }
+})
+
+lsp_zero.configure('rust_analyzer', {
+    settings = {
+        ["rust-analyzer"] = {
+            diagnostics = {
+                disabled = {"unresolved-proc-macro"},
+            },
+        }
+    }
 })
 
 local cmp = require('cmp')
