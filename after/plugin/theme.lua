@@ -1,5 +1,5 @@
 require("monokai-pro").setup({
-  transparent_background = false,
+  transparent_background = true,
   terminal_colors = true,
   devicons = true, -- highlight the icons of `nvim-web-devicons`
   filter = "machine", -- classic | octagon | pro | machine | ristretto | spectrum
@@ -17,9 +17,9 @@ require("monokai-pro").setup({
     -- "which-key",
     "renamer",
     "notify",
-    -- "nvim-tree",
+    "nvim-tree",
     -- "neo-tree",
-    -- "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
+    "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
   },-- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
   plugins = {
     bufferline = {
@@ -36,3 +36,4 @@ require("monokai-pro").setup({
 })
 
 vim.cmd([[colorscheme monokai-pro]])
+vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
