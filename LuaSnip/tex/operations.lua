@@ -23,7 +23,7 @@ return
 {
     -- To the power of
     s({ 
-        trig="([%d])rd", 
+        trig="([%d])po", 
         wordTrig = false,
         regTrig = true,
         snippetType="autosnippet" 
